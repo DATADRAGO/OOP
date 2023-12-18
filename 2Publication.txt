@@ -1,0 +1,84 @@
+public class publication
+{
+  public String title;
+  public double price;
+  public int copies;
+  
+  public publication()
+{
+   this.title=null;
+   this.price=0;
+   this.copies=0;
+}
+public publication(String title,double price,int copies)
+{
+    this.title=title;
+    this.price=price;
+    this.copies=copies;
+}
+
+public void sellcopy(int qty)
+{
+   System.out.println("Total Publication sell :Rs."+(qty*price));
+}
+}
+
+
+
+public class Book extends publication
+{
+  private String author;
+ 
+  public Book()
+  {
+    super();
+    this.author=null;
+  }
+  public Book(String title,double price,int copies,String author)
+{
+    super(title,price,copies);
+    this.author=author;
+}
+   public void sellcopy(int qty)
+{   System.out.println("Total Book sell:Rs."+(qty*price));
+}
+}
+
+
+
+public class Magazine extends publication
+{
+  private int orderQty;
+  private String currIssue;
+  
+  public Magazine(String title, double price,int copies,int orderQty,String currIssue)
+ {
+    super (title,price,copies);
+    this.orderQty=orderQty;
+    this.currIssue=currIssue;
+ }
+   public void sellcopy(int qty)
+ {
+System.out.println("Total Magazine sell: Rs."+(qty*price));
+}
+}
+
+
+public class MainClass
+{
+     public static void main(String[]args)
+    {
+    publication obj=new publication("java",200,5);
+    obj.sellcopy(2);
+  
+    publication obj1=new Book("java",100,10,"james Gaoslin");
+    obj1.sellcopy(3);
+ 
+    publication obj2=new Magazine("java",200,5,6,"Sept");
+    obj2.sellcopy(4);
+    }
+}
+
+
+
+

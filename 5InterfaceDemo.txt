@@ -1,0 +1,114 @@
+public class InterfaceDemo
+{
+    public static void main(String[]args)
+    {
+        Bicycle b=new Bicycle();
+        b.changeGear(3);
+        b.speedup(2);
+        b.applyBreakes(1);
+        System.out.println("Bicycle Status :" );
+        b.statusDisplay();
+
+        Bike bk =new Bike();
+         bk.changeGear(4);
+        bk.speedup(3);
+        bk.applyBreakes(2);
+        System.out.println("Bike Status :" );
+        bk.statusDisplay();
+
+        Car c=new Car();
+         c.changeGear(5);
+        c.speedup(3);
+        c.applyBreakes(1);
+        System.out.println("Car Status :" );
+        c.statusDisplay();
+    }
+}
+
+
+
+public interface Vehicle{
+    void changeGear(int x);
+    void speedup(int x);
+    void applyBreakes(int x);
+}
+
+
+
+public class Bicycle implements Vehicle{
+    int speed;
+    int gear;
+
+    @Override
+    public void changeGear(int Gear)
+    {
+        gear=Gear;
+    }
+    @Override
+    public void speedup(int increment)
+    {
+        speed=speed+increment;
+    }
+    @Override
+    public void applyBreakes( int decrement)
+    {
+        speed=speed-decrement;
+    }
+    public void statusDisplay()
+    {
+        System.out.println("Gear:"+gear+  "speed:"+speed);
+    }
+}
+
+
+public class Bike implements Vehicle{
+    int speed;
+    int gear;
+
+    @Override
+    public void changeGear(int Gear)
+    {
+        gear=Gear;
+    }
+    @Override
+    public void speedup(int increment)
+    {
+        speed=speed+increment;
+    }
+    @Override
+    public void applyBreakes( int decrement)
+    {
+        speed=speed-decrement;
+    }
+    public void statusDisplay()
+    {
+        System.out.println("Gear:"+gear+  " speed:"+speed);
+    }
+}
+
+
+
+public class Car implements Vehicle{
+    int speed;
+    int gear;
+
+    @Override
+    public void changeGear(int Gear)
+    {
+        gear=Gear;
+    }
+    @Override
+    public void speedup(int increment)
+    {
+        speed=speed+increment;
+    }
+    @Override
+    public void applyBreakes( int decrement)
+    {
+        speed=speed-decrement;
+    }
+    public void statusDisplay()
+    {
+        System.out.println("Gear:"+gear+  " speed:"+speed);
+    }
+}
